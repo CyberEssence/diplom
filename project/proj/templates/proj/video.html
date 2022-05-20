@@ -1,0 +1,35 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Video | {% endblock %}
+
+{% block content %}
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container">
+                <section class="section">
+                    <div class="columns">
+                        <div class="column is-8 is-offset-2">
+                    
+                            <div class="container">
+                                {% for x in video %}
+                                    {% if query %}
+                                        <h3 class="text-center mt-2 mb-2">{{x.caption}}</h3>
+                                        <video class="embed-responsive embed-responsive-16by9" controls="controls" >
+                                            <source src="{{x.video.url}}" type="video/mp4" />
+                                        </video>
+                                        <h3 class="text-center mt-2 mb-2">{{x.text}}</h3>
+                                    {% else %}
+                                        <div class="content">
+                                            <p>No result for the given query...</p>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+{% endblock %}
