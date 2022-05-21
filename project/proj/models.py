@@ -2,12 +2,6 @@ from django.db import models
 import requests
 import os, re
 from .funcs import fix_command, get_text, save_srt, remove_trash_files, srt_to_video
-# from django.utils.text import slugify
-from time import time
-
-"""def gen_slug(s):
-    new_slug = slugify(s, allow_unicode=True)
-    return new_slug + '-' + str(int(time()))"""
 
 # Create your models here.
 class Category(models.Model):
@@ -66,7 +60,7 @@ class Video(models.Model):
     #slug = models.SlugField(max_length=50, unique=True, default="post")
 
 
-    """text = get_text()
+    text = get_text()
     text_lst = text.split(' ')
     text_mod = []
     print(text_lst)
@@ -79,7 +73,7 @@ class Video(models.Model):
 
     srt_to_video()
 
-    remove_trash_files()"""
+    remove_trash_files()
     txt = get_text()
 
     #subprocess.check_call('ffmpeg -i /home/manjaro/Desktop/diplom/project/media/video/22/2_mod.mp4 -vf "setpts=0.20*PTS" /home/manjaro/Desktop/diplom/project/media/video/22/2_mod_fast_5.mp4', shell=True)

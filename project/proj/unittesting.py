@@ -1,6 +1,12 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+""" 
+
+    Author: Solovov N. G. (CyberEssence)
+    
+"""
+
 import unittest
 from golos import Text
 

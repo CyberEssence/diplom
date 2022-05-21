@@ -1,3 +1,9 @@
+""" 
+
+    Author: Solovov N. G. (CyberEssence)
+    
+"""
+
 from django.contrib.sitemaps import Sitemap
 from proj.models import Category, Post
 

@@ -1,3 +1,9 @@
+""" 
+
+    Author: Solovov N. G. (CyberEssence)
+    
+"""
+
 from django.shortcuts import redirect, render, get_object_or_404
 from django.db.models import Q
 #from .forms import CommentForm

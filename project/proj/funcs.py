@@ -1,3 +1,9 @@
+""" 
+
+    Author: Solovov N. G. (CyberEssence)
+    
+"""
+
 from moviepy.editor import * 
 from pydub import AudioSegment
 #import torch

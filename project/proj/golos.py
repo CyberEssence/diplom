@@ -3,9 +3,14 @@ from moviepy.editor import *
 import pysrt
 from pysrt import SubRipFile
 from pysrt import SubRipItem
+""" 
+
+    Author: Solovov N. G. (CyberEssence)
+    
+"""
+
 import subprocess
 import os
-
 
 class Text:
 	def get_text(self):

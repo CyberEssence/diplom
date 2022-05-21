@@ -1,3 +1,11 @@
+
+""" 
+
+    Author: Solovov N. G. (CyberEssence)
+    
+"""
+
+
 from unittest.mock import seal
 from django.contrib import admin
 

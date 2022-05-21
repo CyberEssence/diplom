@@ -1,3 +1,10 @@
+""" 
+
+    Author: Solovov N. G. (CyberEssence)
+    
+"""
+
+
 import time
 import requests
 

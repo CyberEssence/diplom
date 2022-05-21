@@ -8,6 +8,12 @@ import requests
 #import nemo.collections.asr as nemo_asr
 import os, re
 
+""" 
+
+    Author: Solovov N. G. (CyberEssence)
+    
+"""
+
 
 def main():
     """Run administrative tasks."""
