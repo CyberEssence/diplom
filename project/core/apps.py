@@ -1,3 +1,9 @@
+""" 
+
+    Author: Solovov N. G. (CyberEssence)
+    
+"""
+
 from django.apps import AppConfig
 
 
