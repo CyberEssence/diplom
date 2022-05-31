@@ -3,7 +3,8 @@ import requests
 import os, re
 from .funcs import fix_command, get_text, save_srt, remove_trash_files, srt_to_video
 
-# Create your models here.
+# создание моделей
+
 class Category(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField()
