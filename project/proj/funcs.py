@@ -19,6 +19,8 @@ import moviepy.editor as mp
 from pydub import AudioSegment
 import re
 
+
+# коррекция текста алгоритмом Дамерау-Левенштейна
 def fix_command(text, words=['что', 'происходит', 'малыш', 'тебе', 'уже', 'третий раз', 'ловят', 'на', 'драке', 'я', 'знаю']):
         array = np.array(words)
 
@@ -33,6 +35,7 @@ def fix_command(text, words=['что', 'происходит', 'малыш', 'т
 
         return command
 
+# функция переименования видео при переконвертации
 def rename_video():
     n = 1
     os.chdir(r'/home/manjaro/Desktop/diplom/project/media/video/22')
@@ -42,7 +45,7 @@ def rename_video():
     os.chdir(r'/home/manjaro/Desktop/diplom/project/')
 
 
-
+# функция конвертации mp4 в монофонический формат wav
 def convert():
     files = os.listdir(path="/home/manjaro/Desktop/diplom/project/media/video/22") 
     #print(len(files))
@@ -55,6 +58,8 @@ def convert():
         sound1 = sound1.set_channels(1)
         sound1.export(f"/home/manjaro/Desktop/diplom/project/audio/mod_{i}.wav", format="wav")
 
+        
+# функция генерации текста
 def get_text():
     url = "http://88.87.79.40:8000/aZj6awUBVn/"
     #file = os.listdir(path="/home/manjaro/Desktop/diplom/project/audio") 
@@ -67,6 +72,7 @@ def get_text():
     return text
 
 
+# функция создания субтитров
 def save_srt(txt):
     file1 = pysrt.SubRipFile()
     file2 = pysrt.SubRipFile()
@@ -88,6 +94,7 @@ def save_srt(txt):
     file2.save('/home/manjaro/Desktop/diplom/project/subtitles/_2_4.srt')
 
 
+# функция слияния всех srt файлов данного видеофайла в один 
 def merge_srt():
     os.chdir(r'/home/manjaro/Desktop/diplom/project/subtitles')
     ls = [i for i in os.listdir('/home/manjaro/Desktop/diplom/project/subtitles') if i.endswith('.srt')]
@@ -101,6 +108,7 @@ def merge_srt():
     os.chdir(r'/home/manjaro/Desktop/diplom/project')
 
 
+# функция очищения от временных (мусорных) файлов субтитров
 def remove_trash_files():
     from pathlib import Path
     path = Path('/home/manjaro/Desktop/diplom/project/subtitles')
@@ -108,6 +116,7 @@ def remove_trash_files():
         file_name.unlink()
 
 
+# создание формата ass субтитров и вшивание субтитров в видеофайл
 def srt_to_video():
     subprocess.check_call("ffmpeg -i /home/manjaro/Desktop/diplom/project/subtitles/2.srt /home/manjaro/Desktop/diplom/project/subtitles/2.ass", shell=True)
     subprocess.check_call("ffmpeg -i /home/manjaro/Desktop/diplom/project/media/video/22/2.mp4 -vf ass=/home/manjaro/Desktop/diplom/project/subtitles/2.ass /home/manjaro/Desktop/diplom/project/media/video/22/2_mod.mp4", shell=True)
