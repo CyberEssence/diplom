@@ -10,6 +10,7 @@
 import unittest
 from golos import Text
 
+# юнит-тестирование правильности сгенерированного текста
 
 class TestGetText(unittest.TestCase):
 
