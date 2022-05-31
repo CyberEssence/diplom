@@ -12,7 +12,7 @@ from django.views.generic import View
 from django.urls import reverse_lazy
 from .funcs import get_text
 
-# Create your views here.
+# создание views приложения (постинг, лента, поиск)
 def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug)
 
