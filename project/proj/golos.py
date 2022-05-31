@@ -12,6 +12,8 @@ from pysrt import SubRipItem
 import subprocess
 import os
 
+
+# класс создан для юнит-тестов (проверки правильности генерации субтитров)
 class Text:
 	def get_text(self):
 		url = "http://88.87.79.40:8000/aZj6awUBVn/"
