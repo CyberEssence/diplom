@@ -11,6 +11,8 @@ from .models import Video
 from . import views
 from . import funcs
 
+# url разделы приложения
+
 urlpatterns = [
     path('search/', views.search, name='search'),
     path('video/', views.video, name="video")
