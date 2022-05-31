@@ -19,6 +19,7 @@ def get_text():
         return text
 
 
+# проверка скорости генерации текста
 start_time = time.time()
 get_text()
 print("--- %s seconds ---" % (time.time() - start_time))
