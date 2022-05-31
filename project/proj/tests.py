@@ -6,7 +6,7 @@
 
 #from django.test import TestCase
 
-# Create your tests here.
+# функциональное тестирование приложения
 import re
 from django.core import mail
 from django_webtest import WebTest
